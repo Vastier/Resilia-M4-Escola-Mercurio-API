@@ -4,7 +4,9 @@
   "description": "Entidade Funcionários da API da Escola Mercúrio criada como projeto final do Módulo 4 da Resília Educação.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/server.js",
+    "dev": "nodemon ./src/server.js"
   },
   "repository": {
     "type": "git",
@@ -30,5 +32,6 @@
   },
   "nodemonConfig": {
     "delay": 3000
-  }
+  },
+  "type": "module"
 }
