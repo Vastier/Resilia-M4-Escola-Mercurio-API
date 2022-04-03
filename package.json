@@ -1,0 +1,25 @@
+{
+  "name": "resilia-m4-escola-mercurio-api",
+  "version": "0.0.1",
+  "description": "Entidade Funcionários da API da Escola Mercúrio criada como projeto final do Módulo 4 da Resília Educação.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vastier/Resilia-M4-Escola-Mercurio-API.git"
+  },
+  "keywords": [
+    "API",
+    "escola",
+    "funcionarios",
+    "resilia"
+  ],
+  "author": "Vastier",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/Vastier/Resilia-M4-Escola-Mercurio-API/issues"
+  },
+  "homepage": "https://github.com/Vastier/Resilia-M4-Escola-Mercurio-API#readme"
+}
