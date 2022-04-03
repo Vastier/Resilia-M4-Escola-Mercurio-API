@@ -14,7 +14,6 @@ Projeto feito utilizando o [Node.js](https://nodejs.org/en/) e o framework [Expr
 
 Também é um objetivo pessoal seguir as recomendações do [Conventional Commits](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-
 ## Objetivo
 
 Esse projeto tem como objetivo criar uma API REST da Escola Mercúrio, onde será possível realizar operações CRUD na entidade `funcionarios`.
@@ -29,4 +28,3 @@ Minha intenção é que a entidade `funcionarios` possua os seguintes atributos:
 - Data de Nascimento
 - Cargo
 - Data de Admissão
-- Senha
