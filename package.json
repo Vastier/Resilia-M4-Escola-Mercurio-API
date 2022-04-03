@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/Vastier/Resilia-M4-Escola-Mercurio-API/issues"
   },
-  "homepage": "https://github.com/Vastier/Resilia-M4-Escola-Mercurio-API#readme"
+  "homepage": "https://github.com/Vastier/Resilia-M4-Escola-Mercurio-API#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
