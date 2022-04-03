@@ -6,6 +6,8 @@
 
 Como projeto de finalização do Módulo 04 da [Resilia Educação](https://www.resilia.com.br/) em que tivemos que desenvolver propostas de APIs que seriam o MVP de um aplicativo, nós do Grupo 2 escolhemos o tema Escola e disso surgiu a Escola Mercúrio!
 
+Esse repositório pode ser acessado no [Heroku](https://www.heroku.com) [Clicando Aqui.](https://resilia-m4-escola-mercurio-api.herokuapp.com/).
+
 Nesse projeto eu fiquei responsável por criar uma API REST para a Escola Mercúrio, onde será possível realizar operações CRUD na entidade `funcionarios`.
 
 Projeto feito utilizando o [Node.js](https://nodejs.org/en/) e o framework [Express](https://expressjs.com/) e também tentando seguir o [padrão MVC](https://pt.wikipedia.org/wiki/MVC).
