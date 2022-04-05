@@ -3,6 +3,7 @@
 const indexController = (app)=>{
 	app.get('/', (req, res)=>{
 		res.send(`
+		<!DOCTYPE html>
 		<p align="center">
   			<img src="https://raw.githubusercontent.com/Vastier/Resilia-M4-Escola-Mercurio-API/master/src/assets/escola-mercurio-logo.png" alt="Logo da Escola Mercúrio" width="200px">
 		</p>
