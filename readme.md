@@ -31,9 +31,19 @@ Minha intenção é que a entidade `funcionarios` possua os seguintes atributos:
 
 ## Pré-requisitos
 
-- Ter o [Git](https://git-scm.com/) instalado.
+- Ter o [![Git](https://img.shields.io/chocolatey/v/git.svg?label=Git&logo=git&style=flat)](https://git-scm.com/downloads) instalado.
 
-- Ter o [Node versão 16](https://nodejs.org/) instalado.
+- Ter o [![Chocolatey](https://img.shields.io/chocolatey/v/nodejs-lts.svg?label=Node&logo=Nodedotjs&style=flat)](https://nodejs.org/pt-br/download/) instalado.
+
+## Dependencias
+
+- [![express](https://img.shields.io/github/package-json/dependency-version/vastier/Resilia-M4-Escola-Mercurio-API/express?logo=express)](https://www.npmjs.org/package/express)
+
+- [![sqlite3](https://img.shields.io/github/package-json/dependency-version/vastier/Resilia-M4-Escola-Mercurio-API/sqlite3?logo=sqlite)](https://www.npmjs.org/package/sqlite3)
+
+### Dependencias de desenvolvimento
+
+- [![nodemon](https://img.shields.io/github/package-json/dependency-version/vastier/Resilia-M4-Escola-Mercurio-API/dev/nodemon?logo=nodemon)](https://www.npmjs.org/package/nodemon)
 
 ## Instalando Localmente
 
@@ -81,13 +91,16 @@ npm run create
 
 ### Funcionários
 
-- **GET /funcionarios**
+- **GET /funcionarios/todos**
+
+    Retorna todos os funcionários no banco de dados.
 
     Schema da resposta
 
     ```json
     {
   "listaDosFuncionarios": {
+    "erro": <Boolean>,
     "funcionarios": [
       {
         "ID": <Int>,
@@ -100,7 +113,6 @@ npm run create
         "DATA_DE_ADMISSAO": <String>
       }
     ],
-    "erro": <Boolean>
      }
    }
     ```
