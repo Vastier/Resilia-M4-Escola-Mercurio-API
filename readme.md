@@ -1,8 +1,5 @@
-<p align="left">
-  <img src="./src/assets/escola-mercurio-logo.png" alt="Logo da Escola Mercúrio" width="200px">
-</p>
-
-# Resilia M4 - T11 - API Escola Mercúrio - Entidade Funcionários
+<!-- markdownlint-disable MD033 -->
+# <center> Resilia M4 - T11 - API Escola Mercúrio <br> Entidade Funcionários <br> <img src="./src/assets/escola-mercurio-logo.png" alt="Logo da Escola Mercúrio" width="200px"></center>
 
 Como projeto de finalização do Módulo 04 da [Resilia Educação](https://www.resilia.com.br/) em que tivemos que desenvolver propostas de APIs que seriam o MVP de um aplicativo, nós do Grupo 2 escolhemos o tema Escola e disso surgiu a Escola Mercúrio!
 
