@@ -27,7 +27,7 @@
   "homepage": "https://github.com/Vastier/Resilia-M4-Escola-Mercurio-API#readme",
   "dependencies": {
     "express": "^4.17.3",
-    "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master"
+    "sqlite3": ">=5.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
