@@ -10,13 +10,13 @@ class FuncionariosDAO {
 			this.db.all('SELECT * FROM FUNCIONARIOS', (error, rows) => {
 				if(error){
 					reject({
-						"msg": error.message,
 						"erro": true,
+						"msg": error.message,
 					})
 				}else{
 					resolve({
-						"funcionarios": rows,
 						"erro": false,
+						"funcionarios": rows,
 					})
 				}
 			})

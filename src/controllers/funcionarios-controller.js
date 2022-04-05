@@ -9,8 +9,8 @@ const funcionariosController = (app, db)=>{
 			res.status(200).json({listaDosFuncionarios})
 		} catch (error) {
 			res.status(400).json({
-				"mensagem de erro": error.message,
 				"erro": true,
+				"mensagem de erro": error.message,
 			})
 		}
 		
