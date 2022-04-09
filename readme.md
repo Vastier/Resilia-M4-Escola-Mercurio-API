@@ -88,9 +88,35 @@ npm run create
 
 ### Funcionários
 
-- **GET /funcionarios/todos**
+- **GET `/funcionarios/todos`**
 
     Retorna todos os funcionários no banco de dados.
+
+    Schema da resposta
+
+    ```json
+    {
+  "listaDeTodosOsFuncionarios": {
+    "erro": <Boolean>,
+    "Lista dos Funcionários": [
+      {
+        "ID": <Int>,
+        "NOME": <String>,
+        "CPF": <String>,
+        "TELEFONE": <String>,
+        "EMAIL": <String>,
+        "DATA_DE_NASCIMENTO": <String>,
+        "CARGO": <String>,
+        "DATA_DE_ADMISSAO": <String>
+      }
+    ],
+     }
+   }
+    ```
+
+- **GET `/funcionarios/busca={cpf}`**
+
+    Retorna um .
 
     Schema da resposta
 
