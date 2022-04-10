@@ -95,47 +95,18 @@ npm run create
     Schema da resposta
 
     ```json
-    {
-  "listaDeTodosOsFuncionarios": {
+   {
     "erro": <Boolean>,
     "Lista dos Funcionários": [
-      {
-        "ID": <Int>,
-        "NOME": <String>,
-        "CPF": <String>,
-        "TELEFONE": <String>,
-        "EMAIL": <String>,
-        "DATA_DE_NASCIMENTO": <String>,
-        "CARGO": <String>,
-        "DATA_DE_ADMISSAO": <String>
-      }
-    ],
-     }
-   }
-    ```
-
-- **GET `/funcionarios/busca={cpf}`**
-
-    Retorna um .
-
-    Schema da resposta
-
-    ```json
-    {
-  "listaDosFuncionarios": {
-    "erro": <Boolean>,
-    "funcionarios": [
-      {
-        "ID": <Int>,
-        "NOME": <String>,
-        "CPF": <String>,
-        "TELEFONE": <String>,
-        "EMAIL": <String>,
-        "DATA_DE_NASCIMENTO": <String>,
-        "CARGO": <String>,
-        "DATA_DE_ADMISSAO": <String>
-      }
-    ],
-     }
-   }
-    ```
+        {
+          "ID": <Int>,
+          "NOME": <String>,
+          "CPF": <String>,
+          "TELEFONE": <String>,
+          "EMAIL": <String>,
+          "DATA_DE_NASCIMENTO": <String>,
+          "CARGO": <String>,
+          "DATA_DE_ADMISSAO": <String>
+        },
+      ]
+    }

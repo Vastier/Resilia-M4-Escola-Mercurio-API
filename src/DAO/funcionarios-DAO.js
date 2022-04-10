@@ -9,22 +9,16 @@ class FuncionariosDAO {
 		return new Promise((resolve, reject) => {
 			this.db.all(
 				'SELECT * FROM FUNCIONARIOS',
-
 				(error, rows) => {
 					if(error){
-						reject({
-							"erro": true,
-							"Mensagem de erro": error.message,
-						})
+						reject(error)
 					}else{
-						resolve({
-							"erro": false,
-							"Lista dos Funcionários": rows,
-						})
+						resolve(rows)
 					}
 			})
 		})
 	}
+
 }
 
 export default FuncionariosDAO
