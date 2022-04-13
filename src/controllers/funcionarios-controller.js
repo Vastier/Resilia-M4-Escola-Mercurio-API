@@ -18,6 +18,23 @@ const funcionariosController = (app, db)=>{
 			})
 		}
 	})
+
+	app.post('/funcionarios/inserir', async (req, res)=>{
+		const funcionario = req.body
+		try {
+			const resposta = await funcionariosModel.inserirFuncionario(funcionario)
+			res.status(201).json({
+				"erro": false, 
+				"Resposta": resposta
+			})
+		} catch (error) {
+			const cleanmsg = error.message.replace(' (cpf)','') // Corrige o 'bug' do JOI onde operações .external() sempre adicionam o label em parêntesis no final do erro. ( isso ou eu não entendi como desativa, segue referência: https://github.com/sideway/joi/pull/2651 )
+			res.status(500).send({
+				"erro": true,
+				"Mensagem de erro": cleanmsg,
+			})
+		}
+	})
 }
 
 export default funcionariosController

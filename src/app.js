@@ -7,7 +7,7 @@ import db from './database/sqlite-db.js';
 
 const app = express()
 
-
+app.use(express.json())
 
 //Página principal usada como fallback redirecionando para o Github.
 indexController(app)
