@@ -38,6 +38,14 @@ Minha intenção é que a entidade `funcionarios` possua os seguintes atributos:
 
 - [![sqlite3](https://img.shields.io/github/package-json/dependency-version/vastier/Resilia-M4-Escola-Mercurio-API/sqlite3?logo=sqlite)](https://www.npmjs.org/package/sqlite3)
 
+- [![joi](https://img.shields.io/github/package-json/dependency-version/vastier/Resilia-M4-Escola-Mercurio-API/joi?logo=sqlite)](https://www.npmjs.org/package/joi)
+
+- [![@hapi/joi-date](https://img.shields.io/github/package-json/dependency-version/vastier/Resilia-M4-Escola-Mercurio-API/@hapi/joi-date?logo=sqlite)](https://www.npmjs.org/package/@hapi/joi-date)
+
+- [![cpf-cnpj-validator](https://img.shields.io/github/package-json/dependency-version/vastier/Resilia-M4-Escola-Mercurio-API/cpf-cnpj-validator?logo=sqlite)](https://www.npmjs.org/package/cpf-cnpj-validator)
+
+- [![joi-phone-number](https://img.shields.io/github/package-json/dependency-version/vastier/Resilia-M4-Escola-Mercurio-API/joi-phone-number?logo=sqlite)](https://www.npmjs.org/package/joi-phone-number)
+
 ### Dependencias de desenvolvimento
 
 - [![nodemon](https://img.shields.io/github/package-json/dependency-version/vastier/Resilia-M4-Escola-Mercurio-API/dev/nodemon?logo=nodemon)](https://www.npmjs.org/package/nodemon)
@@ -110,3 +118,42 @@ npm run create
         },
       ]
     }
+
+- **POST `/funcionarios/inserir`**
+
+    Insere um funcionário no banco de dados.
+
+    Dados a serem enviados via POST
+
+    | Parâmetro | Descrição |
+    |---|---|
+    | `"nome"` | Nome do funcionário (string, obrigatório) |
+    | `"cpf"` | CPF do funcionário (número de 11 digitos, obrigatório, aceita pontos e traços, deve ser um CPF válido e não cadastrado ainda) |
+    | `"telefone"` | Telefone do candidato (número de telefone com DDD, obrigatório, aceita espaços, parênteses e traços) |
+    | `"email"` | Email do funcionário (string, obrigatório, deve ser um email válido) |
+    | `"dataDeNascimento"` | Data de Nascimento do funcionário (números no formato DD/MM/AAAA, opcional) |
+    | `"cargo"` | Cargo do funcionário (string, obrigatório) |
+    | `"dataDeAdmissao"` | Data de Admissão do funcionário (números no formato DD/MM/AAAA, opcional) |
+
+    Exemplo de requisição:
+
+    ```json
+    {
+        "nome": "Jão da Silva",
+        "cpf": "836.799.020-00",
+        "telefone": "(51) 99887-6432",
+        "email": "jao.silva@example.com",
+        "dataDeNascimento": "29/05/1980",
+        "cargo": "Inspetor",
+        "dataDeAdmissao": "05/03/2015"
+    }
+    ```
+
+    Exemplo de resposta:
+
+    ```json
+    {
+      "erro": false,
+      "Resposta": "Funcionário de nome: 'Jão da Silva' adicionado ao banco de dados com sucesso."
+    }
+    ```
