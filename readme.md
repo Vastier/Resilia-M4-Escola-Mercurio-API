@@ -177,6 +177,69 @@ npm run create
     ```json
     {
       "erro": false,
-      "Resposta": "Funcionário de nome: 'Jão da Silva' adicionado ao banco de dados com sucesso."
+      "Resposta": "Funcionário de nome 'Jão da Silva' adicionado ao banco de dados com sucesso."
+    }
+    ```
+
+- **PUT `/funcionarios/modificar/{id}`**
+
+    Modifica os dados do funcionário com o ID especificado, caso seja encontrado no banco de dados.
+
+    Dados a serem enviados no body via PUT, essa rota usa a mesma validação de dados da rota POST.
+
+    | Parâmetro | Descrição |
+    |---|---|
+    | `"nome"` | Nome do funcionário (string, obrigatório) |
+    | `"cpf"` | CPF do funcionário (número de 11 digitos, obrigatório, aceita pontos e traços, deve ser um CPF válido) |
+    | `"telefone"` | Telefone do candidato (número de telefone com DDD, obrigatório, aceita espaços, parênteses e traços) |
+    | `"email"` | Email do funcionário (string, obrigatório, deve ser um email válido) |
+    | `"dataDeNascimento"` | Data de Nascimento do funcionário (números no formato DD/MM/AAAA, opcional) |
+    | `"cargo"` | Cargo do funcionário (string, obrigatório) |
+    | `"dataDeAdmissao"` | Data de Admissão do funcionário (números no formato DD/MM/AAAA, opcional) |
+
+    Exemplo de body da requisição:
+
+    ```json
+    {
+        "nome": "Jão da Silva Atualizado",
+        "cpf": "994.279.600-27",
+        "telefone": "(21) 99887-6432",
+        "email": "jao.silva@example.com",
+        "dataDeNascimento": "29/05/1980",
+        "cargo": "Inspetor",
+        "dataDeAdmissao": "03/05/2015"
+    }
+    ```
+
+    Exemplo de resposta:
+
+    ```json
+    {
+      "erro": false,
+      "Resposta": "Dados do funcionário 'Jão da Silva Atualizado' atualizado com sucesso no banco de dados.",
+      "Dados antigos": [
+        {
+          "ID": 8,
+          "NOME": "Jão da Silva",
+          "CPF": "836.799.020-00",
+          "TELEFONE": "(51) 99887-6432",
+          "EMAIL": "jao.silva@example.com",
+          "DATA_DE_NASCIMENTO": "29/05/1980",
+          "CARGO": "Inspetor",
+          "DATA_DE_ADMISSAO": "05/03/2015"
+        }
+      ],
+      "Dados atualizados": [
+        {
+          "ID": 8,
+          "NOME": "Jão da Silva Atualizado",
+          "CPF": "994.279.600-27",
+          "TELEFONE": "(21) 99887-6432",
+          "EMAIL": "jao.silva@example.com",
+          "DATA_DE_NASCIMENTO": "29/05/1980",
+          "CARGO": "Inspetor",
+          "DATA_DE_ADMISSAO": "03/05/2015"
+        }
+      ]
     }
     ```
