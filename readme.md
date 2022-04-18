@@ -90,6 +90,10 @@ Caso tenha removido o arquivo database.db ou queira criar um e popular com dados
 npm run create
 ```
 
+## Coleção do Insomnia
+
+- Caso use o [![Chocolatey](https://img.shields.io/chocolatey/v/insomnia-rest-api-client.svg?label=Insomnia&logo=insomnia&style=flat)](https://insomnia.rest/download) é possível importar a collection pronta com todas as rotas, para isso importe o arquivo `EscolaMercurioAPI-Insomnia_Collection.json`.
+
 ---
 
 ## Rotas implementadas
@@ -244,7 +248,7 @@ npm run create
     }
     ```
 
-- **PUT `/funcionarios/modificar/{id}`**
+- **DELETE `/funcionarios/apagar/{id}`**
 
     Apaga o funcionário com o ID especificado, caso seja encontrado no banco de dados.
 
