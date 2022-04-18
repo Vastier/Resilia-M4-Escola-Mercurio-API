@@ -79,6 +79,21 @@ class FuncionariosDAO {
 		 })
 	}
 
+	apagaFuncionario = (id) => {
+		return new Promise((resolve, reject) => {
+			this.db.run(
+				'DELETE FROM FUNCIONARIOS WHERE ID = ?',
+				id,
+				(error) => {
+					if(error){
+						reject(error)
+					}else{
+						resolve(`Funcionário de ID ${id} apagado com sucesso.`)
+					}
+			})
+		})
+	}
+
 	_buscaIDFuncionario = (id) => {
 		return new Promise((resolve, reject) => {
 			this.db.all(

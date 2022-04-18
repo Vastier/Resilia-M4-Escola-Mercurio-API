@@ -71,6 +71,24 @@ class Funcionarios{
 		}
 	}
 
+	apagaFuncionario = async (id) => {
+		try {
+			const funcionarioApagado = await this.dao._buscaIDFuncionario(id)
+			if (funcionarioApagado.length <= 0) {
+				throw "Não foi encontrado funcionário com este ID."
+			}
+			
+			const respostaDAO = await this.dao.apagaFuncionario(id)
+			
+			return {
+				"resposta" : respostaDAO,
+				"funcionarioApagado" : funcionarioApagado,
+			}
+		} catch (error) {
+			throw new Error(error)
+		}
+	}
+
 	_verificaCpfDuplicado = async (cpf) => {
 		try {
 			const resposta = await this.dao.buscaCpfFuncionario(cpf)

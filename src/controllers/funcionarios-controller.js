@@ -70,6 +70,23 @@ const funcionariosController = (app, db)=>{
 			})
 		}
 	})
+
+	app.delete('/funcionarios/apagar/:id', async (req, res)=>{
+		const id = req.params.id
+		try {
+			const respostaApagaFuncionario = await funcionariosModel.apagaFuncionario(id)
+			res.status(200).json({
+				"erro": false, 
+				"Resposta": respostaApagaFuncionario.resposta,
+				"Funcionário apagado": respostaApagaFuncionario.funcionarioApagado[0],
+			})
+		} catch (error) {
+			res.status(400).json({
+				"erro": true,
+				"Mensagem de erro": error.message
+			})
+		}
+	})
 }
 
 export default funcionariosController
