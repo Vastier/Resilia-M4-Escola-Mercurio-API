@@ -243,3 +243,26 @@ npm run create
       ]
     }
     ```
+
+- **PUT `/funcionarios/modificar/{id}`**
+
+    Apaga o funcionário com o ID especificado, caso seja encontrado no banco de dados.
+
+    Exemplo de resposta:
+
+    ```json
+    {
+      "erro": false,
+      "Resposta": "Funcionário de ID 8 apagado com sucesso.",
+      "Funcionário apagado": {
+        "ID": 8,
+        "NOME": "Jão da Silva Atualizado",
+        "CPF": "994.279.600-27",
+        "TELEFONE": "(21) 99887-6432",
+        "EMAIL": "jao.silva@example.com",
+        "DATA_DE_NASCIMENTO": "29/05/1980",
+        "CARGO": "Inspetor",
+        "DATA_DE_ADMISSAO": "03/05/2015"
+      }
+    }
+    ```
