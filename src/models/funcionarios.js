@@ -40,6 +40,19 @@ class Funcionarios{
 		}
 	}
 	
+	buscaFuncionarioPeloCpf = async (cpf) => {
+		try {
+			const resposta = await this.dao.buscaCpfFuncionario(cpf)
+			if (resposta.length > 0){
+				return resposta
+			} else {
+				throw ("Não foi encontrado funcionário com este CPF.")
+			}
+		} catch (error) {
+			throw new Error(error)
+		}
+	}
+
 	_verificaCpfDuplicado = async (cpf) => {
 		try {
 			const resposta = await this.dao.buscaCpfFuncionario(cpf)

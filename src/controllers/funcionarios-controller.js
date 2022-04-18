@@ -35,6 +35,22 @@ const funcionariosController = (app, db)=>{
 			})
 		}
 	})
+
+	app.get('/funcionarios/buscacpf=:cpf', async (req, res)=>{
+		const cpf = req.params.cpf
+		try {
+			const funcionarioEncontrado = await funcionariosModel.buscaFuncionarioPeloCpf(cpf)
+			res.status(200).json({
+				"erro": false, 
+				"Funcionário": funcionarioEncontrado
+			})
+		} catch (error) {
+			res.status(400).json({
+				"erro": true,
+				"Mensagem de erro": error.message
+			})
+		}
+	})
 }
 
 export default funcionariosController
