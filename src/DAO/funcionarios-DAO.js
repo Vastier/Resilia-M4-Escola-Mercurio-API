@@ -41,7 +41,7 @@ class FuncionariosDAO {
 		 })
 	}
 
-	_verificaCpfNaDatabase = (cpf) => {
+	buscaCpfFuncionario = (cpf) => {
 		return new Promise((resolve, reject) => {
 			this.db.all(
 				'SELECT * FROM FUNCIONARIOS WHERE CPF = ?',

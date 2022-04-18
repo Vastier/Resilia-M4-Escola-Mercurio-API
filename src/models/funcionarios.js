@@ -42,7 +42,7 @@ class Funcionarios{
 	
 	_verificaCpfDuplicado = async (cpf) => {
 		try {
-			const resposta = await this.dao._verificaCpfNaDatabase(cpf)
+			const resposta = await this.dao.buscaCpfFuncionario(cpf)
 			if (resposta.length <= 0){
 				return undefined 
 			} else throw "CPF já foi cadastrado"
