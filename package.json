@@ -1,7 +1,11 @@
 {
   "name": "resilia-m4-escola-mercurio-api",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Entidade Funcionários da API da Escola Mercúrio criada como projeto final do Módulo 4 da Resília Educação.",
+  "engines": {
+    "node": "16.x",
+    "npm": "8.6"
+  },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
