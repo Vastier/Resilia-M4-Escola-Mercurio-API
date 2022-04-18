@@ -119,11 +119,34 @@ npm run create
       ]
     }
 
+- **GET `/funcionarios/buscacpf={cpf}`**
+
+    Retorna o funcionário com o CPF especificado, caso seja encontrado no banco de dados.
+
+    Schema da resposta
+
+    ```json
+   {
+    "erro": <Boolean>,
+    "Funcionário": [
+        {
+          "ID": <Int>,
+          "NOME": <String>,
+          "CPF": <String>,
+          "TELEFONE": <String>,
+          "EMAIL": <String>,
+          "DATA_DE_NASCIMENTO": <String>,
+          "CARGO": <String>,
+          "DATA_DE_ADMISSAO": <String>
+        },
+      ]
+    }
+
 - **POST `/funcionarios/inserir`**
 
     Insere um funcionário no banco de dados.
 
-    Dados a serem enviados via POST
+    Dados a serem enviados no body via POST
 
     | Parâmetro | Descrição |
     |---|---|
@@ -135,7 +158,7 @@ npm run create
     | `"cargo"` | Cargo do funcionário (string, obrigatório) |
     | `"dataDeAdmissao"` | Data de Admissão do funcionário (números no formato DD/MM/AAAA, opcional) |
 
-    Exemplo de requisição:
+    Exemplo de body da requisição:
 
     ```json
     {
