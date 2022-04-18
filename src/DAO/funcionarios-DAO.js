@@ -34,7 +34,7 @@ class FuncionariosDAO {
 					if (error) {
 						reject(error)
 					} else {
-						resolve(`Funcionário de nome: '${funcionario.nome}' adicionado ao banco de dados com sucesso.`)
+						resolve(`Funcionário de nome '${funcionario.nome}' adicionado ao banco de dados com sucesso.`)
 					}
 				}
 			)
@@ -82,7 +82,7 @@ class FuncionariosDAO {
 	_buscaIDFuncionario = (id) => {
 		return new Promise((resolve, reject) => {
 			this.db.all(
-				'SELECT * FROM FUNCIONARIOS WHERE id = ?',
+				'SELECT * FROM FUNCIONARIOS WHERE ID = ?',
 				id,
 				(error, rows) => {
 					if(error){

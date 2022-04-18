@@ -51,9 +51,21 @@ class Funcionarios{
 
 	atualizaFuncionario = async (id, funcionarioAtualizado) => {
 		try {
+			const dadosAntigos = await this.dao._buscaIDFuncionario(id)
+			if (dadosAntigos.length <= 0) {
+				throw "Não foi encontrado funcionário com este ID."
+			}
 			const funcionarioAtualizadoValidado = await FuncionariosSchema.validateAsync(funcionarioAtualizado)
 
-			return await this.dao.atualizaFuncionario(id, funcionarioAtualizadoValidado)
+			const respostaDAO = await this.dao.atualizaFuncionario(id, funcionarioAtualizadoValidado)
+			
+			const dadosAtualizados = await this.dao._buscaIDFuncionario(id)
+
+			return {
+				"resposta" : respostaDAO,
+				"dadosAntigos" : dadosAntigos,
+				"dadosAtualizados": dadosAtualizados
+			}
 		} catch (error) {
 			throw new Error(error)
 		}

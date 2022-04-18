@@ -56,15 +56,12 @@ const funcionariosController = (app, db)=>{
 		const id = req.params.id
 		const funcionarioAtualizado = req.body
 		try {
-			const dadosAntigos = await funcionariosModel._buscaPorId(id)
 			const respostaAtualizaFuncionario = await funcionariosModel.atualizaFuncionario(id, funcionarioAtualizado)
-			const dadosNovos = await funcionariosModel._buscaPorId(id)
 			res.status(200).json({
 				"erro": false, 
-				"Resposta": respostaAtualizaFuncionario,
-				"Dados antigos": dadosAntigos,
-				"Dados atualizados": dadosNovos,
-
+				"Resposta": respostaAtualizaFuncionario.resposta,
+				"Dados antigos" : respostaAtualizaFuncionario.dadosAntigos,
+				"Dados atualizados": respostaAtualizaFuncionario.dadosAtualizados
 			})
 		} catch (error) {
 			res.status(400).json({
