@@ -49,12 +49,31 @@ class Funcionarios{
 		}
 	}
 
+	atualizaFuncionario = async (id, funcionarioAtualizado) => {
+		try {
+			const funcionarioAtualizadoValidado = await FuncionariosSchema.validateAsync(funcionarioAtualizado)
+
+			return await this.dao.atualizaFuncionario(id, funcionarioAtualizadoValidado)
+		} catch (error) {
+			throw new Error(error)
+		}
+	}
+
 	_verificaCpfDuplicado = async (cpf) => {
 		try {
 			const resposta = await this.dao.buscaCpfFuncionario(cpf)
 			if (resposta.length <= 0){
 				return undefined 
 			} else throw "Este CPF já foi cadastrado."
+		} catch (error) {
+			throw new Error(error)
+		}
+	}
+
+	_buscaPorId = async (id) => {
+		try {
+			const resposta = await this.dao._buscaIDFuncionario(id)
+				return resposta 
 		} catch (error) {
 			throw new Error(error)
 		}

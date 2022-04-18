@@ -56,6 +56,44 @@ class FuncionariosDAO {
 		})
 	}
 
+	atualizaFuncionario = (id, funcionarioAtualizado) => {
+		return new Promise((resolve, reject) => { 
+			this.db.run(
+				'UPDATE FUNCIONARIOS SET NOME = ?, CPF = ?, TELEFONE = ?, EMAIL = ?, DATA_DE_NASCIMENTO = ?, CARGO = ?, DATA_DE_ADMISSAO = ? WHERE ID = ?',
+				funcionarioAtualizado.nome,
+				funcionarioAtualizado.cpf,
+				funcionarioAtualizado.telefone,
+				funcionarioAtualizado.email,
+				funcionarioAtualizado.dataDeNascimento,
+				funcionarioAtualizado.cargo,
+				funcionarioAtualizado.dataDeAdmissao,
+				id,
+				(error) => {
+					if (error) {
+						reject(error)
+					} else {
+						resolve(`Dados do funcionário '${funcionarioAtualizado.nome}' atualizado com sucesso no banco de dados.`)
+					}
+				}
+			)
+		 })
+	}
+
+	_buscaIDFuncionario = (id) => {
+		return new Promise((resolve, reject) => {
+			this.db.all(
+				'SELECT * FROM FUNCIONARIOS WHERE id = ?',
+				id,
+				(error, rows) => {
+					if(error){
+						reject(error)
+					}else{
+						resolve(rows)
+					}
+			})
+		})
+	}
+
 }
 
 export default FuncionariosDAO
