@@ -9,7 +9,7 @@ const funcionariosController = (app, db)=>{
 			const listaDeTodosOsFuncionarios = await funcionariosModel.listarTodosFuncionarios()
 			res.status(200).json({
 				"erro": false, 
-				"Lista dos Funcionários": listaDeTodosOsFuncionarios
+				"ListaFuncionarios": listaDeTodosOsFuncionarios
 			})
 		} catch (error) {
 			res.status(400).json({

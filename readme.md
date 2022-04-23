@@ -109,7 +109,7 @@ npm run create
     ```json
    {
     "erro": <Boolean>,
-    "Lista dos Funcionários": [
+    "ListaFuncionarios": [
         {
           "ID": <Int>,
           "NOME": <String>,
